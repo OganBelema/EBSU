@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">EBSU</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!--menu titles -->
+    <string name="course_reg">Course Registration</string>
+    <string name="pay_fee">Pay Fee</string>
+    <string name="hostel_reg">Accommodation</string>
+    <string name="student_result">Result</string>
+    <string name="lms">eLearning</string>
+    <string name="signOut">Sign Out</string>
+    <string name="refresh">Refresh</string>
+    <string name="home">Home</string>
+    <string name="dashboard">Dashboard</string>
+
+    <!--dashboard data -->
+    <string name="userId"> <b>Student ID:</b> %1$s</string>
+    <string name="fullName"> <b>Full Name:</b> %1$s</string>
+    <string name="levelName"> <b>Level:</b> %1$s</string>
+    <string name="programmeName"> <b>Programme:</b> %1$s</string>
+    <string name="departmentName"> <b>Department:</b> %1$s</string>
+    <string name="semesterName"> <b>Semester:</b> %1$s</string>
+    <string name="sessionName"> <b>Session:</b> %1$s</string>
+    <string name="facultyName"> <b>Faculty:</b> %1$s</string>
+    <string name="registeredCourses"> <b>Registered Courses:</b> %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
