@@ -15,7 +15,6 @@ class UserSessionManager(private val _context: Context) {
     // Shared pref mode
     private val PRIVATE_MODE = 0
 
-
     // Check for login
     val isUserLoggedIn: Boolean
         get() = pref.getBoolean(IS_USER_LOGIN, false)

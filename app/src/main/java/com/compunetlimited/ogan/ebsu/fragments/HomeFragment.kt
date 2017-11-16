@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         activity.title = resources.getString(R.string.home)
-        return inflater!!.inflate(R.layout.fragment_home, container, false)
+        return inflater?.inflate(R.layout.fragment_home, container, false)
     }
 
 }// Required empty public constructor

@@ -11,7 +11,6 @@ object ServiceGenerator {
 
     private val BASE_URL = "https://ebsuportal.azurewebsites.net/"
 
-
     private val builder = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

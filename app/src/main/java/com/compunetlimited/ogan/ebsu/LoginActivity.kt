@@ -13,7 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
-    internal lateinit var intent: Intent
+    private lateinit var mIntent: Intent
     private lateinit var email: String
     private lateinit var password: String
     private lateinit var session: UserSessionManager
@@ -22,20 +22,21 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         title = resources.getString(R.string.login)
+
         // User Session Manager
         session = UserSessionManager(applicationContext)
 
         val loginButton = findViewById<Button>(R.id.btn_login)
         loginButton.setOnClickListener {
             //validateInput();
-            intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
+            mIntent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(mIntent)
         }
 
         val registerButton = findViewById<Button>(R.id.btn_register)
         registerButton.setOnClickListener {
-            intent = Intent(applicationContext, CheckIdActivity::class.java)
-            startActivity(intent)
+            mIntent = Intent(applicationContext, CheckIdActivity::class.java)
+            startActivity(mIntent)
         }
     }
 
@@ -51,13 +52,12 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         session.createUserLoginSession(email, password)
                         finish()
-                        //Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                        //startActivity(intent);
+                        //Intent mIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                        //startActivity(mIntent);
                     }
                     println(response.message())
                     println(response.code())
                 }
-
 
             }
 
