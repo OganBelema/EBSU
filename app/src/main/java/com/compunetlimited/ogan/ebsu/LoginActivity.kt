@@ -5,9 +5,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.view.View
-import android.widget.Button
+import android.widget.Toast
 import com.compunetlimited.ogan.ebsu.sessionManagement.UserSessionManager
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.progress_bar_layout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,49 +27,57 @@ class LoginActivity : AppCompatActivity() {
         // User Session Manager
         session = UserSessionManager(applicationContext)
 
-        val loginButton = findViewById<Button>(R.id.btn_login)
-        loginButton.setOnClickListener {
-            //validateInput();
+    }
+
+    override fun onStart() {
+        super.onStart()
+        hideProgressBar()
+        btn_login.setOnClickListener {
+            if (MyUtilClass.checkNetworkConnection(applicationContext))
+                validateInput()
+            else MyUtilClass.showNoInternetMessage(login_view.context)
+            /*finish()
             mIntent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(mIntent)
+            startActivity(mIntent)*/
         }
 
-        val registerButton = findViewById<Button>(R.id.btn_register)
-        registerButton.setOnClickListener {
+        btn_register.setOnClickListener {
             mIntent = Intent(applicationContext, CheckIdActivity::class.java)
             startActivity(mIntent)
         }
     }
 
+
     private fun login() {
         showProgressBar()
-        val login = ServiceGenerator.apiMethods.login(Student(email, password))
-        login.enqueue(object : Callback<UserId> {
-            override fun onResponse(call: Call<UserId>, response: Response<UserId>?) {
+        ServiceGenerator.apiMethods.login(Student(email, password))
+                .enqueue(object : Callback<UserId> {
+                    override fun onResponse(call: Call<UserId>, response: Response<UserId>?) {
 
-                hideProgressBar()
+                        hideProgressBar()
 
-                if (response != null) {
-                    if (response.isSuccessful) {
-                        session.createUserLoginSession(email, password)
-                        finish()
-                        //Intent mIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                        //startActivity(mIntent);
+                        if (response != null) {
+                            if (response.isSuccessful) {
+                                session.createUserLoginSession(email, password)
+                                finish()
+                                mIntent = Intent(applicationContext, MainActivity::class.java)
+                                startActivity(mIntent)
+                            } else {
+                                MyUtilClass.showErrorMessage(login_view.context, response)
+                            }
+
+                        }
+
                     }
-                    println(response.message())
-                    println(response.code())
-                }
 
-            }
+                    override fun onFailure(call: Call<UserId>, t: Throwable?) {
+                        hideProgressBar()
+                        if (t != null)
+                            Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG)
+                                    .show()
 
-            override fun onFailure(call: Call<UserId>, t: Throwable?) {
-                hideProgressBar()
-                if (t != null) {
-                    println(t.message)
-                }
-
-            }
-        })
+                    }
+                })
     }
 
     private fun validateInput() {
@@ -109,11 +118,11 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showProgressBar() {
         login_view.visibility = View.GONE
-        pb_login.visibility = View.VISIBLE
+        progress_bar.visibility = View.VISIBLE
     }
 
     private fun hideProgressBar() {
-        pb_login.visibility = View.GONE
+        progress_bar.visibility = View.GONE
         login_view.visibility = View.VISIBLE
     }
 

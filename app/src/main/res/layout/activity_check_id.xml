@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context="com.compunetlimited.ogan.ebsu.CheckIdActivity">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
+    <ProgressBar
+        android:id="@+id/checkId_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check ID"
-        android:layout_marginTop="10dp"/>
-</LinearLayout>
+        android:id="@+id/checkId_container"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.compunetlimited.ogan.ebsu.CheckIdActivity">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_student_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/checkID_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/button_style"
+            android:text="Check ID" />
+    </LinearLayout>
+</FrameLayout>

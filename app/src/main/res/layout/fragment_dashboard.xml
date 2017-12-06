@@ -5,11 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.compunetlimited.ogan.ebsu.fragments.DashboardFragment">
 
-    <ProgressBar
-        android:id="@+id/home_progress_bar"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center" />
+    <include layout="@layout/progress_bar_layout"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -131,9 +127,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </android.support.v7.widget.CardView>
-
-
-
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </FrameLayout>

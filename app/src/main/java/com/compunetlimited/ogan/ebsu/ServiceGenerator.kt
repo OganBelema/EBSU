@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceGenerator {
 
-    private val BASE_URL = "https://ebsuportal.azurewebsites.net/"
+    private val BASE_URL = "https://emis.ebsu.edu.ng/"
 
     private val builder = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -17,7 +17,7 @@ object ServiceGenerator {
 
     private val retrofit = builder.build()
 
-    var apiMethods = retrofit.create(ApiMethods::class.java)
+    val apiMethods = retrofit.create(ApiMethods::class.java)
 
 }
 

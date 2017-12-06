@@ -13,14 +13,15 @@ import com.compunetlimited.ogan.ebsu.R
 /**
  * A simple [Fragment] subclass.
  */
-class CourseRegistrationFragment : Fragment() {
+class TimetableFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        activity?.title = resources.getString(R.string.timetable)
+
         // Inflate the layout for this fragment
-        activity?.title = resources.getString(R.string.course_reg)
-        return inflater.inflate(R.layout.fragment_course_registration, container, false)
+        return inflater.inflate(R.layout.fragment_timetable, container, false)
     }
 
-}// Required empty public constructor
+}

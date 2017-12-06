@@ -3,48 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.compunetlimited.ogan.ebsu.fragments.HomeFragment">
-<GridLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_gravity="center"
-    android:columnCount="2"
-    android:padding="16dp">
 
-    <!--<TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quick links"
-        android:layout_margin="8dp"
-        android:textSize="22sp"/>-->
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        style="@style/home_buttons"
-        android:drawableTop="@drawable/ic_event_black_24dp"
-        android:text="Timetable"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/quick_links"
+            android:textSize="22sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/home_buttons"
-        android:text="Assignment"
-        android:drawableTop="@drawable/ic_assignment_black_24dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/home_buttons"
-        android:text="Online test"
-        android:drawableTop="@drawable/ic_assessment_black_24dp"/>
+        <Button
+            android:id="@+id/timetable_btn"
+            style="@style/home_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_event_black_24dp"
+            android:text="@string/timetable" />
 
-    <Button
-        android:drawableTop="@drawable/ic_assignment_turned_in_black_24dp"
-        style="@style/home_buttons"
-        android:layout_marginLeft="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Attendance"/>
+        <Button
+            android:id="@+id/assignment_btn"
+            style="@style/home_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_assignment_black_24dp"
+            android:text="@string/assignment" />
 
-</GridLayout>
+        <Button
+            android:id="@+id/online_test_btn"
+            style="@style/home_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_assessment_black_24dp"
+            android:text="@string/online_test" />
+
+        <Button
+            android:id="@+id/attendance_btn"
+            style="@style/home_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_assignment_turned_in_black_24dp"
+            android:text="@string/attendance" />
+
+    </LinearLayout>
 </ScrollView>

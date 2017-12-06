@@ -2,11 +2,11 @@
     <string name="app_name">EBSU</string>
     <string name="login">Login</string>
     <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="Password">Password</string>
     <string name="register">Register</string>
 
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_password">This Password is too short</string>
+    <string name="error_incorrect_password">This Password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="title_activity_main">MainActivity</string>
 
@@ -39,4 +39,25 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--hints-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+
+    <!--home fragment-->
+    <string name="quick_links">Quick Links</string>
+    <string name="timetable">Timetable</string>
+    <string name="assignment">Assignment</string>
+    <string name="online_test">Online test</string>
+    <string name="attendance">Attendance</string>
+
+    <!--Payment urls-->
+    <string name="fee_payment_url">https://emis.ebsu.edu.ng/SchoolFeePayments/MakePayment</string>
+    <string name="accommodation_payment_url">https://emis.ebsu.edu.ng/AssignedRooms/HostelApplication</string>
+
+    <!--register details-->
+    <string name="register_full_name">Full Name: %1$s %2$s</string>
+
+    <string name="image_url">"https://emis.ebsu.edu.ng/ConvertImage/RenderImage?StudentId="%s"</string>
 </resources>
