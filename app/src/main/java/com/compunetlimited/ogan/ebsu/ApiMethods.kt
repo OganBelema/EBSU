@@ -12,16 +12,16 @@ import retrofit2.http.Query
 
 interface ApiMethods {
 
-    /*@POST("studemtApi/checkPayment")
-    Call<Boolean> checkPayent(@Query("studentId") String studentId);
+    @POST("studentApi/checkPayment")
+    fun checkPayment(@Query("studentId") studentId: String?):  Call<Boolean>
 
-    @POST("AccomodationApi/CheckHostel")
-    Call<ResponseBody> checkRoom(@Query("studentId") String studentId);
+    /* @POST("AccomodationApi/CheckHostel")
+    Call<ResponseBody> checkRoom(@Query("studentId") String studentId);*/
 
     @POST("AccountApi/SignUp")
-    Call<StudentDetails> checkStudentId(@Query("id") String id);
+    fun checkStudentId(@Query("id") id: String): Call<Student>
 
-    @POST("eclassroomapi/mycourses")
+    /* @POST("eclassroomapi/mycourses")
     Call<ArrayList<MyCourses>> getStudentCourses(@Query("studentId") String studentId);*/
 
     @POST("StudentApi/Dashboard")
